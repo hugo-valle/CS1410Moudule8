@@ -13,8 +13,10 @@ int main()
     Waldo.AddResource();
 
     Person WaldoSr = Waldo;
-
     Waldo = WaldoSr;
+
+    string s1 = Waldo.GetResourceName();
+    cout<<"\n s1: "<<s1<<endl;
 
     return 0;
 }

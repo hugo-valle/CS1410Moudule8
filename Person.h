@@ -5,6 +5,7 @@
 #ifndef MOD8_PERSON_H
 #define MOD8_PERSON_H
 #include <iostream>
+#include <memory>   // for smart pointers
 #include "Resource.h"
 using namespace std;
 
@@ -14,24 +15,28 @@ private:
     string firstName;
     string lastName;
     int arNumber;
-    Resource *pResource;
+    //Resource *pResource;
+    shared_ptr<Resource> pResource; // declare a shared pointer
+
+
 public:
     Person(string fn, string ln, int an);
-    Person(const Person &p);
+    //Person(const Person &p); // copy constructor
     ~Person();
-    string GetName() const; // return first + last
+    string GetName(); // return first + last
     // Setter and Getter for the arNumber
-    int getArNumber() const;
+    int getArNumber();
     void setArNumber(int arNumber);
-    const string &getFirstName() const;
+    const string &getFirstName();
     void setFirstName(const string &firstName);
 
     // Operator overload for < and >
-    bool operator < (Person &p) const;
-    bool operator < (int n) const;
+    bool operator < (Person &p);
+    bool operator < (int n);
     friend bool operator < (int n, const Person &p);
     void AddResource();
-    Person&operator = (const Person &p);
+    //Person&operator = (const Person &p);
+    //string GetResourceName();
 };
 bool operator < (int i, const Person &p);
 
