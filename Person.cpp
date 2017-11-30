@@ -13,6 +13,13 @@ Person::Person(string fn, string ln, int an)
     //pResource = NULL; // prior to C++11
     // No need for smart pointers
     //pResource = nullptr; // C++11
+   // cout<<"Constructing "<<firstName<<endl;
+}
+Person::~Person()
+{
+    //delete[] pResource; // IF pResource points to an array
+    //delete pResource;
+    //cout<<"Deleting "<<firstName<<endl;
 }
 
 int Person::getArNumber()
@@ -27,11 +34,6 @@ void Person::setArNumber(int arNumber)
 /*!
  * Destructor. Clean memory
  */
-Person::~Person()
-{
-    //delete[] pResource; // IF pResource points to an array
-    //delete pResource;
-}
 
 /*!
  * Compare Person < Person
@@ -91,6 +93,15 @@ void Person::setFirstName(const string &firstName)
 {
     Person::firstName = firstName;
 }
+
+ostream &operator<<(ostream &os, const Person &person)
+{
+    os << "firstName: " << person.firstName << " lastName: " << person.lastName << " arNumber: " << person.arNumber;
+    return os;
+}
+
+Person::Person()
+{}
 
 //string Person::GetResourceName()
 //{

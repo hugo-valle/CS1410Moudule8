@@ -15,6 +15,6 @@ set(CMAKE_CXX_STANDARD 11)
 #        BankAccount.cpp BankAccount.h)
 #set(SOURCE_FILES Acuumulator.cpp Accum.h Person.h Person.cpp
  #       Resource.cpp Resource.h)
-set(SOURCE_FILES playVectors.cpp)
+set(SOURCE_FILES playVectors.cpp Person.cpp Person.h Resource.h Resource.cpp)
 
 add_executable(mod8 ${SOURCE_FILES})

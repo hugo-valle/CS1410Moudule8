@@ -21,6 +21,9 @@ private:
 
 public:
     Person(string fn, string ln, int an);
+
+    Person();
+
     //Person(const Person &p); // copy constructor
     ~Person();
     string GetName(); // return first + last
@@ -37,6 +40,8 @@ public:
     void AddResource();
     //Person&operator = (const Person &p);
     //string GetResourceName();
+
+    friend ostream &operator<<(ostream &os, const Person &person);
 };
 bool operator < (int i, const Person &p);
 
